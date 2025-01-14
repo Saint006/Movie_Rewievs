@@ -1,0 +1,53 @@
+{% extends 'blank.html'%} {% load static %} {% block content %}
+
+<h3>Recently Edited</h3>
+{% for movie_obj in recent_movies %}
+<p>{{ movie_obj.title | upper }}</p>
+{% endfor %}
+
+<h1>List Movies{{visits}}</h1>
+<form method="GET" action="{% url 'list' %}">
+  <input type="text" name="search" placeholder="Search" />
+  <button type="submit">Search</button>
+</form>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Year</th>
+    <th>Edit/Delete</th>
+  </tr>
+  {% for movie_obj in movies %}
+  <tr>
+    <td>
+      {% if movie_obj.poster %}
+      <img
+        src="{{ movie_obj.poster.url }}"
+        alt="{{ movie_obj.title }}"
+        style="width: 500px; height: auto"
+      />
+      {% else %}
+      <p>No Image Available</p>
+      {% endif %}
+    </td>
+
+    <td>
+      <h2>{{movie_obj.title | upper}}</h2>
+    </td>
+    <td>
+      <p>{{movie_obj.description | default:'No data available'}}</p>
+    </td>
+    <td>
+      <h4>{{movie_obj.year}}</h4>
+    </td>
+    <td>
+      <a href="{% url 'edit' movie_obj.id %}">edit</a>/<a
+        href="{% url 'delete' movie_obj.id%}"
+        >Delete</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock content %}

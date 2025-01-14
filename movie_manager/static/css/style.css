@@ -1,0 +1,91 @@
+/* Reset styles */
+body,
+h1,
+p,
+input,
+button,
+form,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Form box */
+.form-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Form title */
+.form-box h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Labels */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Inputs */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Button */
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Error message */
+.error-message {
+  margin-top: 10px;
+  color: #ff4d4d;
+  font-size: 14px;
+}

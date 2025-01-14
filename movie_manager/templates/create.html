@@ -1,0 +1,10 @@
+{% extends 'blank.html' %}
+{% block title %}Create Movie{% endblock title %}
+{% block content %}
+<h1>Create</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ frm.as_p }}
+  <button type="submit">Create</button>
+</form>
+{% endblock content %}
